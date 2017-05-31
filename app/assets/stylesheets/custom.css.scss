@@ -1,0 +1,16 @@
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+#logo:hover {
+  color: gray;
+}
+
+.listing {
+  list-style: none;
+  padding-left: 0;
+}

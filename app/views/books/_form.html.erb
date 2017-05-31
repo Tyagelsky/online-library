@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for(@book, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <div class="control-label col-sm-2">
+        <%= f.label :name%>
+      </div>
+      <div class="col-sm-8">
+      <%= f.text_field :name, class: "form-control", placeholder: "name of book", autofocus: true%>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="control-label col-sm-2">
+      <%= f.label :description%>
+    </div>
+      <div class="col-sm-8">
+      <%= f.text_area :description,rows:8, class: "form-control", placeholder: "Small description about book"%>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="control-label col-sm-2">
+      <%= f.label :avatar%>
+    </div>
+      <div class="col-sm-8">
+      <%= f.file_field :avatar%>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    <%= f.submit  class:"btn btn-primary btn-lg"%>
+    </div>
+  </div>
+    <% end %>
+
+   <div class="col-xs-5 col-xs-offset-5">
+    [ <%= link_to "Back to all books", books_path %> ]
+    </div>
+  </div>
+</div>
