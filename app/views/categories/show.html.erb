@@ -1,0 +1,29 @@
+<h1 align="center"> <%= "Categories:" + @category.name%> </h1>
+<div align="center">
+  <div class="row">
+    <span ><%= link_to "Edit this category", edit_category_path(@category) %></span>
+    </div>
+    <% @category.books.each do |book| %>
+    <div class="row">
+      <div class="col-xs-8 col-xs-offset-2">
+        <div class="well well-lg">
+          <div class="book-avatar">
+            <%=  image_tag book.avatar.url(:thumb) %>
+          </div>
+          <div class="book-name">
+            <%= link_to book.name, book_path(book) %>
+          </div>
+          <div class="book-description">
+            <%= truncate(book.description , length: 100) %>
+          </div>
+            <div class="article-actions">
+            <%= link_to "Delete book",book_path(book), method: :delete,
+                                          data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-danger" %>
+            <%= link_to "Edit book", edit_book_path(book), class: "btn btn-xs btn-primary" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+
+  </div>

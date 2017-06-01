@@ -7,6 +7,7 @@ gem 'rails', '4.2.6'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'devise'
+gem 'will_paginate', '3.0.7'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem 'paperclip'
@@ -51,4 +52,5 @@ group :development do
 end
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
