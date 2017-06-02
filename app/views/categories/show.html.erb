@@ -3,6 +3,7 @@
   <div class="row">
     <span class="badge" ><%= link_to "Edit this category", edit_category_path(@category) %></span>
     </div>
+      <%= will_paginate @category_books %>
     <% @category.books.each do |book| %>
     <div class="row">
       <div class="col-xs-8 col-xs-offset-2">
@@ -25,5 +26,7 @@
       </div>
     </div>
     <% end %>
-
+    <div align="center">
+        <%= will_paginate @category_books%>
+      </div>
   </div>
