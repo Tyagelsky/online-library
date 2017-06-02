@@ -16,9 +16,11 @@
     <p> <%= render @book.categories %> </p>
     <% end %>
     <div class="book-actions">
+      <% if (user_signed_in? && current_user.admin?)  %>
         <%= link_to "Edit book", edit_book_path(@book), class: "btn btn-xs btn-success" %>
         <%= link_to "Delete book", book_path(@book), method: :delete,
                                       data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-danger" %>
+      <% end %>                                
         <%= link_to "View all books", books_path, class: "btn btn-xs btn-primary" %>
 
     </div>
