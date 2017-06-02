@@ -1,26 +1,35 @@
 <h1 align="center"> All books: </h1>
-<% @books.each do |book| %>
-<div class="row center">
-  <div class="col-xs-8 col-xs-offset-2">
-    <div class="well well-lg">
-      <div class="book-avatar">
-        <%=  image_tag book.avatar.url(:thumb) %>
-      </div>
-      <div class="book-name">
-        <%= link_to book.name, book_path(book) %>
-      </div>
-      <div class="description">
-        <%= truncate(book.description , length: 100) %>
-      </div>
-      <% if book.categories.any? %>
-        <p>Categories: <%= render book.categories %></p>
-      <% end %>
-        <div class="article-actions">
-        <%= link_to "Delete book",book_path(book), method: :delete,
-                                      data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-danger" %>
-        <%= link_to "Edit book", edit_book_path(book), class: "btn btn-xs btn-primary" %>
+<div align="center">
+  <%= will_paginate %>
+</div>
+  <% @books.each do |book| %>
+  <div class="row center">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div class="book-avatar">
+          <%=  image_tag book.avatar.url(:thumb) %>
+        </div>
+        <div class="book-name">
+          <%= link_to book.name, book_path(book) %>
+        </div>
+        <div class="description">
+          <%= truncate(book.description , length: 100) %>
+        </div>
+        <div class="authors">
+           <p >Author(s): <i><%=  book.authors %></i></p>
+        </div>
+        <% if book.categories.any? %>
+          <p>Categories: <%= render book.categories %></p>
+        <% end %>
+          <div class="article-actions">
+          <%= link_to "Delete book",book_path(book), method: :delete,
+                                        data: {confirm: "Are you sure?"} , class: "btn btn-xs btn-danger" %>
+          <%= link_to "Edit book", edit_book_path(book), class: "btn btn-xs btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
+  <% end %>
+<div align="center">
+  <%= will_paginate %>
 </div>
-<% end %>

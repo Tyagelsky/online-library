@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   validates :name, presence: true, length: {minimum: 1, maximum: 50}
+  validates :authors, presence: true, length: {minimum: 3, maximum: 100}
   validates :description, presence: true, length: {minimum: 10, maximum: 450}
 
   has_many :book_categories

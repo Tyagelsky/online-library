@@ -1,7 +1,7 @@
 <h1 align="center"> <%= "Categories:" + @category.name%> </h1>
 <div align="center">
   <div class="row">
-    <span ><%= link_to "Edit this category", edit_category_path(@category) %></span>
+    <span class="badge" ><%= link_to "Edit this category", edit_category_path(@category) %></span>
     </div>
     <% @category.books.each do |book| %>
     <div class="row">
